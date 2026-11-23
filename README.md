@@ -35,14 +35,14 @@ provides inference for NAVSIM v1 NAVTEST and nuScenes validation.
 
 ### NAVSIM v1 NAVTEST
 
-| Model | Benchmark | Backbone | NC ↑ | DAC ↑ | TTC ↑ | Comfort ↑ | EP ↑ | PDMS ↑ | Checkpoint |
-| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| FastWorld | NAVSIM v1 NAVTEST | ResNet-34 | 98.5 | 98.0 | 94.6 | 99.9 | 89.9 | **92.2** | Google Drive (coming soon) |
+| Model | Benchmark | Backbone | NC ↑ | DAC ↑ | TTC ↑ | Comfort ↑ | EP ↑ | PDMS ↑ | FPS ↑ | Checkpoint |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| FastWorld | NAVSIM v1 NAVTEST | ResNet-34 | 98.5 | 98.0 | 94.6 | 99.9 | 89.9 | **92.2** | 132 | Google Drive (coming soon) |
 
 <!-- Replace the NAVSIM checkpoint cell with [Google Drive](URL). -->
 
-Metrics use a 0–100 scale across 12,146 NAVTEST scenes. The paper reports 132 FPS
-on one RTX 4090. The released code and checkpoint reproduced 92.1988 PDMS on
+Metrics use a 0–100 scale across 12,146 NAVTEST scenes. FPS is reported on one
+RTX 4090. The released code and checkpoint reproduced 92.1988 PDMS on
 all 12,146 scenes with the official NAVSIM v1.1 evaluator. The checkpoint includes
 the ResNet-34 weights.
 
