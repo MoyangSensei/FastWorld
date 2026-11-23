@@ -1,6 +1,6 @@
 <div align="center">
 
-# FastWorld
+# <img src="assets/fastworld-logo.png" alt="FastWorld" width="128">
 
 ### Imagine Smarter, Drive Faster:<br>Efficient World Modeling for Decision-Aware Autonomous Driving
 
