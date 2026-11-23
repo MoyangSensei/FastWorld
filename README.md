@@ -37,9 +37,7 @@ provides inference for NAVSIM v1 NAVTEST and nuScenes validation.
 
 | Model | Benchmark | Backbone | NC ↑ | DAC ↑ | TTC ↑ | Comfort ↑ | EP ↑ | PDMS ↑ | FPS ↑ | Checkpoint |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| FastWorld | NAVSIM v1 NAVTEST | ResNet-34 | 98.5 | 98.0 | 94.6 | 99.9 | 89.9 | **92.2** | 132 | Google Drive (coming soon) |
-
-<!-- Replace the NAVSIM checkpoint cell with [Google Drive](URL). -->
+| FastWorld | NAVSIM v1 NAVTEST | ResNet-34 | 98.5 | 98.0 | 94.6 | 99.9 | 89.9 | **92.2** | 132 | [Google Drive](https://drive.google.com/file/d/17ajsxTVtJBcGohSmCtlDpiOhUfYgV_Aq/view?usp=sharing) |
 
 Metrics use a 0–100 scale across 12,146 NAVTEST scenes. FPS is reported on one
 RTX 4090. The released code and checkpoint reproduced 92.1988 PDMS on
@@ -50,9 +48,7 @@ the ResNet-34 weights.
 
 | Model | Backbone | L2 1 s ↓ | L2 2 s ↓ | L2 3 s ↓ | L2 avg. ↓ | Collision 1 s ↓ | Collision 2 s ↓ | Collision 3 s ↓ | Collision avg. ↓ | FPS ↑ | Checkpoint |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| FastWorld | Swin-T | 0.21 | 0.37 | 0.63 | **0.40** | 0.10% | 0.30% | 0.52% | **0.31%** | 17 | Google Drive (coming soon) |
-
-<!-- Replace the nuScenes checkpoint cell with [Google Drive](URL). -->
+| FastWorld | Swin-T | 0.21 | 0.37 | 0.63 | **0.40** | 0.10% | 0.30% | 0.52% | **0.31%** | 17 | [Google Drive](https://drive.google.com/file/d/1_pobEoW2SNTtdXxtZJAlqeSJLZa4dJpv/view?usp=sharing) |
 
 L2 is in meters. L2 and box collision use LAW's temporal-prefix averaging over
 the 5,119 valid 3-second futures in the 6,019-sample validation set. The paper
