@@ -1,0 +1,3 @@
+_target_: fastworld.agent.FastWorldAgent
+_convert_: all
+checkpoint_path: ${oc.env:FASTWORLD_CHECKPOINT}
