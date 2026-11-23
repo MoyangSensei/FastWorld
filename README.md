@@ -35,7 +35,7 @@ provides inference for NAVSIM v1 NAVTEST and nuScenes validation.
 
 ### NAVSIM v1 NAVTEST
 
-| Model | Benchmark | Backbone | NC ↑ | DAC ↑ | TTC ↑ | Comfort ↑ | EP ↑ | PDMS ↑ | FPS ↑ | Checkpoint |
+| Model | Benchmark | Backbone | NC ↑ | DAC ↑ | TTC ↑ | Comfort ↑ | EP ↑ | PDMS ↑ | FPS ↑ (RTX 4090) | Checkpoint |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | FastWorld | NAVSIM v1 NAVTEST | ResNet-34 | 98.5 | 98.0 | 94.6 | 99.9 | 89.9 | **92.2** | 132 | [Google Drive](https://drive.google.com/file/d/17ajsxTVtJBcGohSmCtlDpiOhUfYgV_Aq/view?usp=sharing) |
 
@@ -46,7 +46,7 @@ the ResNet-34 weights.
 
 ### nuScenes validation
 
-| Model | Backbone | L2 1 s ↓ | L2 2 s ↓ | L2 3 s ↓ | L2 avg. ↓ | Collision 1 s ↓ | Collision 2 s ↓ | Collision 3 s ↓ | Collision avg. ↓ | FPS ↑ | Checkpoint |
+| Model | Backbone | L2 1 s ↓ | L2 2 s ↓ | L2 3 s ↓ | L2 avg. ↓ | Collision 1 s ↓ | Collision 2 s ↓ | Collision 3 s ↓ | Collision avg. ↓ | FPS ↑ (RTX 4090) | Checkpoint |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | FastWorld | Swin-T | 0.21 | 0.37 | 0.63 | **0.40** | 0.10% | 0.30% | 0.52% | **0.31%** | 17 | [Google Drive](https://drive.google.com/file/d/1_pobEoW2SNTtdXxtZJAlqeSJLZa4dJpv/view?usp=sharing) |
 
