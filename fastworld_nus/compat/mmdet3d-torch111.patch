@@ -1,0 +1,71 @@
+--- a/mmdet3d/ops/ball_query/src/ball_query.cpp
++++ b/mmdet3d/ops/ball_query/src/ball_query.cpp
+@@ -4 +4 @@
+-#include <THC/THC.h>
++#include <ATen/cuda/CUDAContext.h>
+@@ -12 +11,0 @@
+-extern THCState *state;
+--- a/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp
++++ b/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp
+@@ -5 +4,0 @@
+-#include <THC/THC.h>
+@@ -11 +9,0 @@
+-extern THCState *state;
+--- a/mmdet3d/ops/gather_points/src/gather_points.cpp
++++ b/mmdet3d/ops/gather_points/src/gather_points.cpp
+@@ -2 +1,0 @@
+-#include <THC/THC.h>
+@@ -8 +6,0 @@
+-extern THCState *state;
+--- a/mmdet3d/ops/group_points/src/group_points.cpp
++++ b/mmdet3d/ops/group_points/src/group_points.cpp
+@@ -4 +4 @@
+-#include <THC/THC.h>
++#include <ATen/cuda/CUDAContext.h>
+@@ -12 +11,0 @@
+-extern THCState *state;
+--- a/mmdet3d/ops/interpolate/src/interpolate.cpp
++++ b/mmdet3d/ops/interpolate/src/interpolate.cpp
+@@ -4 +4 @@
+-#include <THC/THC.h>
++#include <ATen/cuda/CUDAContext.h>
+@@ -15 +14,0 @@
+-extern THCState *state;
+--- a/mmdet3d/ops/knn/src/knn.cpp
++++ b/mmdet3d/ops/knn/src/knn.cpp
+@@ -6 +5,0 @@
+-#include <THC/THC.h>
+@@ -9 +7,0 @@
+-extern THCState *state;
+--- a/mmdet3d/ops/spconv/conv.py
++++ b/mmdet3d/ops/spconv/conv.py
+@@ -207 +207 @@
+-@CONV_LAYERS.register_module()
++@CONV_LAYERS.register_module(force=True)
+@@ -233 +233 @@
+-@CONV_LAYERS.register_module()
++@CONV_LAYERS.register_module(force=True)
+@@ -259 +259 @@
+-@CONV_LAYERS.register_module()
++@CONV_LAYERS.register_module(force=True)
+@@ -285 +285 @@
+-@CONV_LAYERS.register_module()
++@CONV_LAYERS.register_module(force=True)
+@@ -312 +312 @@
+-@CONV_LAYERS.register_module()
++@CONV_LAYERS.register_module(force=True)
+@@ -339 +339 @@
+-@CONV_LAYERS.register_module()
++@CONV_LAYERS.register_module(force=True)
+@@ -358 +358 @@
+-@CONV_LAYERS.register_module()
++@CONV_LAYERS.register_module(force=True)
+@@ -377 +377 @@
+-@CONV_LAYERS.register_module()
++@CONV_LAYERS.register_module(force=True)
+@@ -404 +404 @@
+-@CONV_LAYERS.register_module()
++@CONV_LAYERS.register_module(force=True)
+@@ -431 +431 @@
+-@CONV_LAYERS.register_module()
++@CONV_LAYERS.register_module(force=True)

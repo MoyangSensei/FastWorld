@@ -1,0 +1,7 @@
+--- a/mmcv/ops/csrc/pytorch/cuda/psamask_cuda.cu
++++ b/mmcv/ops/csrc/pytorch/cuda/psamask_cuda.cu
+@@ -5 +4,0 @@
+-#include <THC/THC.h>
+@@ -7,2 +5,0 @@
+-
+-#include <THC/THCDeviceUtils.cuh>
