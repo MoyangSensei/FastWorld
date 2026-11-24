@@ -12,7 +12,7 @@
 
 <sub>† Equal contribution · &#42; Corresponding author · ‡ Project lead</sub>
 
-[**arXiv:2611.28779**](https://arxiv.org/abs/2611.28779)
+[![arXiv: 2611.28779](https://img.shields.io/badge/arXiv-2611.28779-b31b1b)](https://arxiv.org/abs/2611.28779)
 
 </div>
 
