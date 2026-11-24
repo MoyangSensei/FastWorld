@@ -1,8 +1,7 @@
 # FastWorld on nuScenes
 
-Run FastWorld inference on the nuScenes v1.0 validation set using six camera
-views at two timestamps, the benchmark route command, and causal ego-motion and CAN bus inputs.
-The planner outputs six local XY positions at 0.5-second intervals.
+Run FastWorld inference on the nuScenes v1.0 validation set. The planner outputs
+six local XY positions at 0.5-second intervals.
 
 ## Quick start
 
@@ -29,7 +28,7 @@ python -m pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 \
 python -m pip install -r fastworld_nus/requirements.txt
 
 # Point CUDA_HOME at the CUDA 11.3 toolkit and choose an architecture for your GPU.
-# CUDA 11.3 can target RTX 4090 through forward-compatible PTX.
+# Use forward-compatible PTX for RTX 4090 with CUDA 11.3.
 export CUDA_HOME=/usr/local/cuda-11.3
 export TORCH_CUDA_ARCH_LIST="8.6+PTX"
 git clone --branch v1.4.0 --depth 1 https://github.com/open-mmlab/mmcv.git ../mmcv
@@ -46,21 +45,11 @@ pins the NumPy version used in the reference run.
 
 ### 2. Prepare the data and weights
 
-Download nuScenes v1.0 trainval metadata, validation images, map expansion, and
-the CAN bus expansion. Place the VAD temporal train and validation info files in
-the dataset directory. The train info file is used to compute CAN normalization
-statistics. Download links are in the [nuScenes downloads](https://www.nuscenes.org/nuscenes#download)
+Extract the nuScenes v1.0 trainval metadata, validation images, and official
+supplemental data into one dataset directory. Place
+`vad_nuscenes_infos_temporal_train.pkl` and `vad_nuscenes_infos_temporal_val.pkl`
+in that directory as well. See the [nuScenes downloads](https://www.nuscenes.org/nuscenes#download)
 and the [LAW data setup](https://github.com/BraveGroup/LAW#7-download-nuscenes-dataset-and-pickle-files).
-
-```text
-nuScenes/
-├── can_bus/                           # scene-xxxx_pose.json and other streams
-├── maps/
-├── samples/
-├── v1.0-trainval/
-├── vad_nuscenes_infos_temporal_train.pkl
-└── vad_nuscenes_infos_temporal_val.pkl
-```
 
 Download the nuScenes checkpoint from the [results table](../README.md#nuscenes-validation)
 and place it at `fastworld_nus/checkpoints/fastworld_nuscenes.pth`.
@@ -70,12 +59,9 @@ Use the provided FastWorld checkpoint with the included Swin-T parameters.
 
 ```bash
 export NUSCENES_ROOT=/path/to/nuScenes
-python -m fastworld_nus.can \
-  --train-info "$NUSCENES_ROOT/vad_nuscenes_infos_temporal_train.pkl" \
-  --val-info "$NUSCENES_ROOT/vad_nuscenes_infos_temporal_val.pkl" \
-  --scene-json "$NUSCENES_ROOT/v1.0-trainval/scene.json" \
-  --can-root "$NUSCENES_ROOT/can_bus" \
-  --output fastworld_nus/outputs/can_val.npz
+python -m fastworld_nus.prepare_data \
+  --data-root "$NUSCENES_ROOT" \
+  --output fastworld_nus/outputs/val_features.npz
 ```
 
 ### 3. Run inference
@@ -84,7 +70,7 @@ python -m fastworld_nus.can \
 CUDA_VISIBLE_DEVICES=0 python -m fastworld_nus.infer \
   --data-root "$NUSCENES_ROOT" \
   --val-info "$NUSCENES_ROOT/vad_nuscenes_infos_temporal_val.pkl" \
-  --can-features fastworld_nus/outputs/can_val.npz \
+  --input-features fastworld_nus/outputs/val_features.npz \
   --checkpoint fastworld_nus/checkpoints/fastworld_nuscenes.pth \
   --output fastworld_nus/outputs/predictions.jsonl \
   --score

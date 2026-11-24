@@ -73,8 +73,9 @@ def run(args):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    for argument in ("data-root", "val-info", "can-features", "checkpoint", "output"):
+    for argument in ("data-root", "val-info", "checkpoint", "output"):
         parser.add_argument("--" + argument, type=Path, required=True)
+    parser.add_argument("--input-features", "--can-features", dest="can_features", type=Path, required=True)
     parser.add_argument("--score", action="store_true", help="Compute LAW metrics using validation annotations.")
     parser.add_argument("--limit", type=int, help="Use the first N samples for a quick check.")
     parser.add_argument("--shards", type=int, default=1)

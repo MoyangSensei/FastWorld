@@ -12,9 +12,7 @@
 
 <sub>† Equal contribution · &#42; Corresponding author · ‡ Project lead</sub>
 
-**arXiv** (coming soon)
-
-<!-- Replace the arXiv placeholder with the paper link once available. -->
+[**arXiv:2611.28779**](https://arxiv.org/abs/2611.28779)
 
 </div>
 
@@ -57,7 +55,7 @@ reports 17 FPS on one RTX 4090.
 ## Quick start
 
 - [NAVSIM v1](#navsim-v1) covers environment setup, NAVTEST data, and inference.
-- [nuScenes](fastworld_nus/README.md#quick-start) covers environment setup, CAN inputs, inference, and validation metrics.
+- [nuScenes](fastworld_nus/README.md#quick-start) covers environment setup, data preparation, inference, and validation metrics.
 
 ### NAVSIM v1
 
@@ -169,6 +167,11 @@ approximately `0.922`. For a quick check, run the same script with
 
 </details>
 
+## Work Log
+
+- **2026-11-23** — Created the repository and released inference code and checkpoints for NAVSIM v1 and nuScenes.
+- **2026-11-24** — The FastWorld preprint became available on [arXiv](https://arxiv.org/abs/2611.28779).
+
 ## Acknowledgements
 
 This work builds on [NAVSIM](https://github.com/autonomousvision/navsim),
@@ -181,6 +184,14 @@ to those components.
 
 ## Citation
 
-BibTeX will be added when the paper is available.
-
-<!-- Add the final BibTeX entry here. -->
+```bibtex
+@misc{jia2026imaginesmarterdrivefaster,
+      title={Imagine Smarter, Drive Faster: Efficient World Modeling for Decision-Aware Autonomous Driving},
+      author={Feiyang Jia and Lin Liu and Zhicheng Bao and Caiyan Jia and Ziying Song and Shengkai Zhang and Lina Han and Yan Zhao and Xiaoshuai Hao},
+      year={2026},
+      eprint={2611.28779},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2611.28779},
+}
+```
